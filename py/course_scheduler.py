@@ -146,6 +146,7 @@ def main():
 	This method reads and cleans the input JSON by calling methods, and finally calls the scheduler algorithm
 	Algorithm output is printed to stdout
 	Sample input file: data/course_scheduler_input1.json
+	Each course has a list of prerequisites (may be empty)
 
 	:return: None
 	:rtype: None
