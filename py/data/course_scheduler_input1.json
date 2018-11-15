@@ -1,0 +1,22 @@
+[
+  {
+    "name": "a",
+    "prerequisites": ["b", "c", "d", "e"] 
+  },
+  {
+    "name": "b",
+    "prerequisites": ["c", "d", "e"] 
+  },
+  {
+    "name": "c",
+    "prerequisites": ["d", "e"] 
+  },
+  {
+    "name": "d",
+    "prerequisites": ["e"] 
+  },
+  {
+    "name": "e",
+    "prerequisites": [] 
+  }
+]
