@@ -19,31 +19,41 @@ def luhn_check_generator_10(N):
 	"""
 	Luhn mod 10 check digit generator
 
-	Generates the check digit of a numeric sequence using Luhn Algorithm
+	Generates the check digit of a numeric sequence using the Luhn Algorithm
 
 	:return: Generated check digit
 	:rtype: int
 	"""
+	# Digital sum of numbers
 	digital = {0: 0, 2: 2, 4: 4, 6: 6, 8: 8, 10: 1, 12: 3, 14: 5, 16: 7, 18: 9}
+
+	# Storing the sum
 	s = 0
 	for i in range(len(N)):
 		if i&1:
+			# Double the odd index numbers, 0-index notation
 			s += digital[int(N[i])*2]
 		else:
+			# Keep the even index numbers as is, 0-index notation
 			s += int(N[i])
+	
 	s *= 9
+	# Mod 10
 	check = s%10
+	
 	return check
 
 def luhn_checker_10(N):
 	"""
 	Luhn mod 10 check digit checker
 
-	Checks the check digit of a numeric sequence using Luhn Algorithm
+	Checks the check digit of a numeric sequence using the Luhn Algorithm
 
 	:return: True if N is valid, False if invalid
 	:rtype: bool
 	"""
+
+	# In this program, the last digit is taken to be the check digit
 	if luhn_check_generator_10(N[:-1])==int(N[-1]):
 		return True
 	return False
